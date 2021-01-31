@@ -3,7 +3,7 @@
 **** Tarea: 		Trabajo aplicativo STATA Básico
 **** Autor: 		Bruno Chaihuaque Dueñas
 **** Fecha: 		31/01/2021
-**** URL  :			https://github.com/bchaihuaque/STATA/blob/master/Tarea_STATA_Basico/Bruno_Chaihuaque_Trabajo.do
+**** URL  :         https://github.com/bchaihuaque/STATA/blob/master/Tarea_STATA_Basico/Bruno_Chaihuaque_Trabajo.do
 *******************************************************************************/
 **** configurando path
 cls
