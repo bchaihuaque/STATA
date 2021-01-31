@@ -5,16 +5,39 @@
 **** Fecha: 		31/01/2021
 **** URL  :         https://github.com/bchaihuaque/STATA/blob/master/Tarea_STATA_Basico/Bruno_Chaihuaque_Trabajo.do
 *******************************************************************************/
+
+/******************************************************************************
+**** Outline:
+			Configuración de las rutas o path
+			PARTE 1: Cuadros para el año 2019
+			1.1 Generación de la base de datos
+			1.2 Limpieza de la base de datos
+			1.3 Renombrando variables
+			1.4 Filtrado de valores según enunciado de la tarea
+			1.5 Construcción de la variable departamento y setting 
+			para Lima Metropolitana y Lima Provincias
+			1.6 Generando la tabla requerida en la tarea
+
+			PARTE 2: Cuadros para el año 2015 - 2019
+			1.1 Generación de la base de datos
+			1.2 Fusión vertical de la base de datos
+			1.3 Limpieza de la base de datos
+			1.4 Renombrando variables
+			1.5 Filtrado de valores según el enunciado
+			1.6 Construcción de la variable departamento y setting 
+			para Lima Metropolitana y Lima Provincias
+			1.7 Generando la tabla requerida en la tarea	
+******************************************************************************/
 **** configurando path
 cls
 clear all
 if ("`c(username)'"  ==  "bchai"){
-		global	tarea   	"D:/Estudiando/Stata/Stata Basico/Tarea"
+		global	    tarea   	"D:/Estudiando/Stata/Stata Basico/Tarea"
 		}
 **** configurando folder structure
 
-		global	do-files  	"${tarea}/do-files"
-		global	bases		"${tarea}/bases"
+		global	    do-files  	"${tarea}/do-files"
+		global	    bases		"${tarea}/bases"
 
 ********************************************************************************
 **** PARTE 1: CUADROS PARA EL AÑO 2019
@@ -35,11 +58,11 @@ Result                           # of obs.
 */
 gsort -_m // ordenamos de mayor a menor
 keep if _merge==3 
-*quitamos los valores que no hacen matched
+*quitamos los valores que no hacen match
 save "${tarea}/bases/unidos-2019", replace
 rename a*o enaho
 
-**** 1.2 trabajando con la base
+**** 1.2 Limpieza de la base
 keep enaho conglome vivienda hogar codperso ///
 ubigeo p207 p208a p301a /// sexo edad año o grado de estudios
 p4191 p4192 p4193 p4194 p4195 p4196 p4197 p4198 // seguro de algún tipo
